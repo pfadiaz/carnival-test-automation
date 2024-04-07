@@ -1,0 +1,37 @@
+{
+  "name": "carnival-test-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean:install": "rimraf dist node_modules package-lock.json && npm i",
+    "test:ui": "npx playwright test --ui",
+    "test:headless": "npx playwright test",
+    "docker:build": "docker build -t carnival-test-automation .",
+    "lint": "cross-env eslint 'tests/**/*.ts' 'lib/**/*.ts' 'playwright.config.ts'",
+    "lint:fix": "cross-env eslint 'tests/**/*.ts' 'lib/**/*.ts' 'playwright.config.ts' --fix",
+    "format": "cross-env prettier --write 'tests/**/*.ts' 'lib/**/*.ts' 'playwright.config.ts' '**/*.json' '**/*.md' '!package-lock.json' '!dist/**/*' '!build/**/*'",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^0.16.1",
+    "cross-env": "^7.0.3",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.12.5",
+    "@typescript-eslint/eslint-plugin": "6.13.1",
+    "@typescript-eslint/parser": "6.13.1",
+    "babel-loader": "^8.3.0",
+    "eslint": "8.54.0",
+    "husky": "^9.0.11",
+    "prettier": "3.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "5.2.2"
+  }
+}
