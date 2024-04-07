@@ -1,9 +1,10 @@
 import { test as base } from '@playwright/test'
-import { HomePage, CruiseSearchPage } from '../pages/index'
+import { HomePage, CruiseSearchPage, CruiseItineraryPage } from '../pages/index'
 
 type ClinicPages = {
   homePage: HomePage
   cruiseSearchPage: CruiseSearchPage
+  cruiseItinerary: CruiseItineraryPage
 }
 
 export const test = base.extend<ClinicPages>({
@@ -12,6 +13,9 @@ export const test = base.extend<ClinicPages>({
   },
   cruiseSearchPage: async ({ page }, use) => {
     await use(new CruiseSearchPage(page))
+  },
+  cruiseItinerary: async ({ page }, use) => {
+    await use(new CruiseItineraryPage(page))
   },
 })
 
