@@ -1,4 +1,4 @@
 export enum SailToLocations {
   Alaska = 'Alaska',
-  Bahamas = 'The Bahamas'
+  Bahamas = 'The Bahamas',
 }

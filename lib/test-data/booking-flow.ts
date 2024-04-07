@@ -2,7 +2,7 @@ import * as enums from '@/enums'
 export const bookingCruise = async () => {
   return {
     sailTo: {
-      Bahamas: enums.SailToLocations.Bahamas
+      Bahamas: enums.SailToLocations.Bahamas,
     },
     sailFrom: {
       Jacksonville: enums.SailFromLocations.Jacksonville,
@@ -11,12 +11,12 @@ export const bookingCruise = async () => {
     },
     dates: {
       begin: enums.Months.January,
-      end: enums.Months.December
+      end: enums.Months.December,
     },
     cruises: {
       fromTampa: enums.Cruises.fromTampa,
       fromTampa2: enums.Cruises.fromTampa,
-      fromJacksonville: enums.Cruises.fromJacksonville
-    }
+      fromJacksonville: enums.Cruises.fromJacksonville,
+    },
   }
 }
