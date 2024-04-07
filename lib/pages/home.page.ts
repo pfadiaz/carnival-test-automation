@@ -41,9 +41,12 @@ export class HomePage {
 
   async pickSailToOption() {
     await this.sailToOption.click()
-    await this.sailToBahamas.isVisible()
-
-    await this.sailToBahamas.click()
+    try {
+      await this.sailToBahamas.click()
+    } catch (error) {
+      await this.sailToOption.click()
+      await this.sailToBahamas.click()
+    }
   }
 
   async pickDateOption() {
