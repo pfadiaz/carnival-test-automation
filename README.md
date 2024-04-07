@@ -24,7 +24,20 @@ npx playwright install
 
 # Usage - Running Tests
 
-## UI Mode
+### UI Mode - VSCode Debbuger:
+NOTE: I like to use VSCODE due to the native integration with Playwright.
+
+Open this link and follow the instructions to configure your local environment in VSCODE
+
+https://playwright.dev/docs/getting-started-vscode
+
+Once you have installed the extensions and followed the instructions, you can go to:
+
+- Testing (left side bar)
+- Click "Show Browser"
+- The click play on any test to see the execution
+
+## UI Mode - CLI
 
 To run the test suite in UI mode, use the following command:
 
