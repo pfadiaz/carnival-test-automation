@@ -23,7 +23,9 @@ export class CruiseSearchPage {
     this.priceSliderMaxRight = this.priceSliderBar.locator('span').nth(1)
     this.priceSliderMinLeft = this.priceSliderBar.locator('span').nth(2)
     this.sortByPriceOption = page.getByTestId('sortBySelect')
-    this.viewItinerary = page.getByTestId('cg-cruise-glance_BA3_TPA_PA_6_Mon').getByTestId('cg-itinerary_BA3_TPA_PA_6_Mon')
+    this.viewItinerary = page
+      .getByTestId('cg-cruise-glance_BA3_TPA_PA_6_Mon')
+      .getByTestId('cg-itinerary_BA3_TPA_PA_6_Mon')
   }
 
   async nthResultFromGrid(index: number) {

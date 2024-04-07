@@ -1,12 +1,12 @@
 import { test, expect } from '@/fixtures/pages'
 import { bookingCruise } from '@/test-data/booking-flow'
 import * as enums from '@/enums'
-import { CruiseOptions } from '~/lib/interfaces/booking.interface';
+import { CruiseOptions } from '~/lib/interfaces/booking.interface'
 
 let bookingData: CruiseOptions
 test.beforeAll(async () => {
   bookingData = await bookingCruise()
-});
+})
 
 test('TC-001: Validate that a user can run a search for trips to Bahamas between 6 to 9 days', async ({
   page,
@@ -61,20 +61,29 @@ test('TC-003: Validate that a user can sort by price hight to low and low to hig
   )
 })
 
-test('TC-004: Test that a user is able to open the itinerary page after running a search', async ({ cruiseSearchPage, cruiseItinerary }) => {
+test('TC-004: Test that a user is able to open the itinerary page after running a search', async ({
+  cruiseSearchPage,
+  cruiseItinerary,
+}) => {
   await cruiseSearchPage.goTo()
   await cruiseSearchPage.openItinerary()
   await expect(await cruiseItinerary.itineraryList).toBeVisible()
 })
 
-test('TC-005: Validate that a user can read about each day of the itinerary', async ({ cruiseSearchPage, cruiseItinerary }) => {
+test('TC-005: Validate that a user can read about each day of the itinerary', async ({
+  cruiseSearchPage,
+  cruiseItinerary,
+}) => {
   await cruiseSearchPage.goTo()
   await cruiseSearchPage.openItinerary()
   await expect(await cruiseItinerary.itineraryList).toBeVisible()
   await cruiseItinerary.reviewAll(bookingData)
 })
 
-test('TC-006: Verify that a Book now button is available in the intinerary page', async ({ cruiseSearchPage, cruiseItinerary }) => {
+test('TC-006: Verify that a Book now button is available in the intinerary page', async ({
+  cruiseSearchPage,
+  cruiseItinerary,
+}) => {
   await cruiseSearchPage.goTo()
   await cruiseSearchPage.openItinerary()
   await expect(await cruiseItinerary.bookNowButton).toBeVisible()
