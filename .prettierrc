@@ -1,0 +1,25 @@
+{
+  "arrowParens": "avoid",
+  "bracketSameLine": true,
+  "jsxSingleQuote": false,
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": [
+        "**/*.css",
+        "**/*.scss",
+        "**/*.html"
+      ],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
